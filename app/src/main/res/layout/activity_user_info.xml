@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserInfo">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/userinfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/name_userInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/email"
+        app:layout_constraintStart_toStartOf="@+id/name_userInfo"
+        app:layout_constraintTop_toBottomOf="@+id/name_userInfo" />
+
+    <TextView
+        android:id="@+id/age_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/age"
+        app:layout_constraintStart_toStartOf="@+id/email_userinfo"
+        app:layout_constraintTop_toBottomOf="@+id/email_userinfo" />
+
+    <EditText
+        android:id="@+id/name_edit_userinfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/name_userInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name_userInfo"
+        app:layout_constraintTop_toTopOf="@+id/name_userInfo" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/email_userinfo"
+        app:layout_constraintEnd_toEndOf="@+id/name_edit_userinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/name_edit_userinfo"
+        app:layout_constraintTop_toTopOf="@+id/email_userinfo" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/age_userinfo"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="@+id/editTextText2"
+        app:layout_constraintTop_toTopOf="@+id/age_userinfo" />
+
+    <TextView
+        android:id="@+id/country_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/country"
+        app:layout_constraintStart_toStartOf="@+id/age_userinfo"
+        app:layout_constraintTop_toBottomOf="@+id/age_userinfo" />
+
+    <TextView
+        android:id="@+id/dob_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/dob"
+        app:layout_constraintStart_toStartOf="@+id/country_userinfo"
+        app:layout_constraintTop_toBottomOf="@+id/country_userinfo" />
+
+    <TextView
+        android:id="@+id/country_display_userinfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="@string/n_a"
+        app:layout_constraintBottom_toBottomOf="@+id/country_userinfo"
+        app:layout_constraintEnd_toStartOf="@+id/selectCountry_button"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
+        app:layout_constraintTop_toTopOf="@+id/country_userinfo" />
+
+    <TextView
+        android:id="@+id/dob_display_userinfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        app:layout_constraintBottom_toBottomOf="@+id/dob_userinfo"
+        app:layout_constraintEnd_toEndOf="@+id/country_display_userinfo"
+        app:layout_constraintStart_toStartOf="@+id/country_display_userinfo"
+        app:layout_constraintTop_toTopOf="@+id/dob_userinfo" />
+
+    <Button
+        android:id="@+id/selectCountry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/select"
+        app:layout_constraintBottom_toBottomOf="@+id/country_display_userinfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/country_display_userinfo" />
+
+    <Button
+        android:id="@+id/selectDoB_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select"
+        app:layout_constraintBottom_toBottomOf="@+id/dob_display_userinfo"
+        app:layout_constraintEnd_toEndOf="@+id/selectCountry_button"
+        app:layout_constraintStart_toStartOf="@+id/selectCountry_button"
+        app:layout_constraintTop_toTopOf="@+id/dob_display_userinfo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
