@@ -18,6 +18,10 @@ public class User implements Serializable {
     }
 
     public User(){
-
+        this.name = "";
+        this.email = "";
+        this.age = -1;
+        this.country = "";
+        this.dob = "";
     }
 }

@@ -98,9 +98,10 @@ public class DateOfBirth extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent userInfo = new Intent(DateOfBirth.this, UserInfo.class);
+                userInfo.putExtra("DOB", date);
 
-
-                startActivity(userInfo);
+                //startActivity(userInfo);
+                setResult(RESULT_OK, userInfo);
                 finish();
             }
         });

@@ -17,6 +17,7 @@ public class Profile extends AppCompatActivity {
     TextView country;
     TextView dob;
 
+    User user = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,23 @@ public class Profile extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        name = findViewById(R.id.name_display_profile);
+        email = findViewById(R.id.email_display_profile);
+        age = findViewById(R.id.age_display_profile);
+        country = findViewById(R.id.country_display_profile);
+        dob = findViewById(R.id.dob_display_profile);
+
+        if ( getIntent() != null && getIntent().getExtras() != null && getIntent().hasExtra("USER") ) {
+            user = (User) getIntent().getSerializableExtra("USER");
+
+            name.setText( user.name );
+            email.setText( user.email );
+            age.setText( String.valueOf(user.age ));
+            country.setText( user.country );
+            dob.setText( user.dob );
+
+        }
 
 
     }
