@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.math.BigInteger;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -46,32 +47,16 @@ public class DateOfBirth extends AppCompatActivity {
 
         submit = findViewById(R.id.calendar_submit_button);
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent userInfo = new Intent(DateOfBirth.this, UserInfo.class);
-                startActivity(userInfo);
-                finish();
-            }
-        });
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent userInfo = new Intent(DateOfBirth.this, UserInfo.class);
-
-
-                startActivity(userInfo);
-                finish();
-            }
-        });
 
 
 
         long today_date = Instant.now().toEpochMilli();
+        long max_date = today_date + 568_024_668_000L;
 
         calendar = findViewById(R.id.calendar);
         calendar.setDate(today_date);
+        calendar.setMaxDate(max_date);
 
 
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -100,7 +85,25 @@ public class DateOfBirth extends AppCompatActivity {
 
             }
         });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent userInfo = new Intent(DateOfBirth.this, UserInfo.class);
+                startActivity(userInfo);
+                finish();
+            }
+        });
 
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent userInfo = new Intent(DateOfBirth.this, UserInfo.class);
+
+
+                startActivity(userInfo);
+                finish();
+            }
+        });
 
 
     }
